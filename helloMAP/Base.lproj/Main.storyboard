@@ -18,10 +18,28 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6ms-Lt-dSQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iZ5-aX-FS9">
+                                <rect key="frame" x="44" y="44" width="287" height="31"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69983411815068497" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5mE-3n-f7e"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="標準"/>
+                                    <segment title="衛星"/>
+                                    <segment title="混合"/>
+                                </segments>
+                                <connections>
+                                    <action selector="typeChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="UBl-qa-0Ol"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iZ5-aX-FS9" secondAttribute="trailing" constant="44" id="6qB-rP-FPV"/>
+                            <constraint firstItem="iZ5-aX-FS9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="Jm3-z7-uk3"/>
                             <constraint firstItem="6ms-Lt-dSQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OGa-O7-sAX"/>
+                            <constraint firstItem="iZ5-aX-FS9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="RHZ-og-Qts"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6ms-Lt-dSQ" secondAttribute="bottom" id="dNM-wb-QQm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6ms-Lt-dSQ" secondAttribute="trailing" id="wdj-7U-OXB"/>
                             <constraint firstItem="6ms-Lt-dSQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zW4-i2-tv7"/>
@@ -34,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="99"/>
+            <point key="canvasLocation" x="132" y="98.50074962518741"/>
         </scene>
     </scenes>
 </document>

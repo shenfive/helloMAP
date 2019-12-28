@@ -28,6 +28,18 @@ class ViewController: UIViewController {
         
     }
 
-
+    @IBAction func typeChange(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            mymap.mapType = .standard
+        case 1:
+            mymap.mapType = .satellite
+        case 2:
+            mymap.mapType = .hybrid
+        default:
+            break
+        }
+    }
+    
 }
 
