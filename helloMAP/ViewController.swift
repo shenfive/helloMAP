@@ -52,5 +52,15 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func longPressAtion(_ sender: UILongPressGestureRecognizer) {
+        print("Pressed!")
+        let point = sender.location(in: mymap)
+        let location = mymap.convert(point, toCoordinateFrom: mymap)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = location
+        annotation.title = "自訂位置"
+        print(location)
+        self.mymap.addAnnotation(annotation)
+    }
 }
 

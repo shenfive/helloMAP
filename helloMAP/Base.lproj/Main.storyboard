@@ -17,6 +17,10 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6ms-Lt-dSQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ln6-mI-tjb" appends="YES" id="KPr-sR-0na"/>
+                                </connections>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iZ5-aX-FS9">
                                 <rect key="frame" x="44" y="44" width="287" height="31"/>
@@ -35,6 +39,7 @@
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iZ5-aX-FS9" secondAttribute="trailing" constant="44" id="6qB-rP-FPV"/>
                             <constraint firstItem="iZ5-aX-FS9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="Jm3-z7-uk3"/>
@@ -51,6 +56,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Ln6-mI-tjb">
+                    <connections>
+                        <action selector="longPressAtion:" destination="BYZ-38-t0r" id="NA9-Lm-wPw"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="132" y="98.50074962518741"/>
         </scene>
