@@ -52,15 +52,13 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func longPressAtion(_ sender: UILongPressGestureRecognizer) {
-        print("Pressed!")
-        let point = sender.location(in: mymap)
-        let location = mymap.convert(point, toCoordinateFrom: mymap)
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = location
-        annotation.title = "自訂位置"
-        print(location)
-        self.mymap.addAnnotation(annotation)
+    @IBAction func action(_ sender: UIPanGestureRecognizer) {
+        let touchPoint = sender.location(in:self.view)
+        let theView = UIView(frame: CGRect(origin: touchPoint, size: CGSize(width: 2, height: 2)))
+        theView.backgroundColor = UIColor.red
+        self.view.addSubview(theView)
+        print(touchPoint)
     }
+    
 }
 
