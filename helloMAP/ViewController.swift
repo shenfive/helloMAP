@@ -52,13 +52,10 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func action(_ sender: UIPanGestureRecognizer) {
-        let touchPoint = sender.location(in:self.view)
-        let theView = UIView(frame: CGRect(origin: touchPoint, size: CGSize(width: 2, height: 2)))
-        theView.backgroundColor = UIColor.red
-        self.view.addSubview(theView)
-        print(touchPoint)
+    @IBAction func longPressAction(_ sender: UILongPressGestureRecognizer) {
+        print("long Press!!!")
     }
+    
     
 }
 

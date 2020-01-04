@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="PEz-vS-Lkd" appends="YES" id="fCi-nb-S4S"/>
+                                    <outletCollection property="gestureRecognizers" destination="OmD-2f-88k" appends="YES" id="XDC-uA-jSs"/>
                                 </connections>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iZ5-aX-FS9">
@@ -56,11 +56,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="PEz-vS-Lkd">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="OmD-2f-88k">
                     <connections>
-                        <action selector="action:" destination="BYZ-38-t0r" id="7oG-j5-tZY"/>
+                        <action selector="longPressAction:" destination="BYZ-38-t0r" id="mVI-ok-isj"/>
                     </connections>
-                </panGestureRecognizer>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="132" y="98.50074962518741"/>
         </scene>
