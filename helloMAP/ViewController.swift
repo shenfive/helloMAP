@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,CLLocationManagerDelegate {
 
     @IBOutlet weak var mymap: MKMapView!
     var locationMgr:CLLocationManager? = nil
@@ -20,32 +20,46 @@ class ViewController: UIViewController {
         
         locationMgr = CLLocationManager()
         locationMgr?.requestWhenInUseAuthorization()
-        
 
+        locationMgr?.delegate = self
+        
+        locationMgr?.desiredAccuracy = kCLLocationAccuracyBest
+        locationMgr?.activityType = .automotiveNavigation
+        locationMgr?.startUpdatingLocation()
+
+        mymap.userTrackingMode = .followWithHeading
+        
         
         mymap.isScrollEnabled = true
         mymap.isZoomEnabled = true
         mymap.isRotateEnabled = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            if let location = self.locationMgr?.location?.coordinate{
-                let xScale:CLLocationDegrees = 0.01
-                let yScale:CLLocationDegrees = 0.01
-                let span:MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: yScale, longitudeDelta: xScale)
-                let region:MKCoordinateRegion = MKCoordinateRegion.init(center: location, span: span)
-                self.mymap.setRegion(region, animated: true)
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    let annotation = MKPointAnnotation()
-                    annotation.coordinate = location
-                    annotation.title = "譯智"
-                    annotation.subtitle = "教育訓練中心"
-                    self.mymap.addAnnotation(annotation)
-                }
-            }
-            
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            if let location = self.locationMgr?.location?.coordinate{
+//                let xScale:CLLocationDegrees = 0.01
+//                let yScale:CLLocationDegrees = 0.01
+//                let span:MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: yScale, longitudeDelta: xScale)
+//                let region:MKCoordinateRegion = MKCoordinateRegion.init(center: location, span: span)
+//                self.mymap.setRegion(region, animated: true)
+//
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//                    let annotation = MKPointAnnotation()
+//                    annotation.coordinate = location
+//                    annotation.title = "譯智"
+//                    annotation.subtitle = "教育訓練中心"
+//                    self.mymap.addAnnotation(annotation)
+//                }
+//            }
+//
+//        }
         
     }
+    
+    //MARK: Location
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let coordinate = locations[0].coordinate
+        print(coordinate)
+    }
+    
 
     @IBAction func typeChange(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
