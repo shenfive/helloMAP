@@ -20,37 +20,11 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         
         locationMgr = CLLocationManager()
         locationMgr?.requestWhenInUseAuthorization()
-
         locationMgr?.delegate = self
-        
         locationMgr?.desiredAccuracy = kCLLocationAccuracyBest
         locationMgr?.activityType = .automotiveNavigation
         locationMgr?.startUpdatingLocation()
-
         mymap.userTrackingMode = .followWithHeading
-        
-        
-        mymap.isScrollEnabled = true
-        mymap.isZoomEnabled = true
-        mymap.isRotateEnabled = false
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//            if let location = self.locationMgr?.location?.coordinate{
-//                let xScale:CLLocationDegrees = 0.01
-//                let yScale:CLLocationDegrees = 0.01
-//                let span:MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: yScale, longitudeDelta: xScale)
-//                let region:MKCoordinateRegion = MKCoordinateRegion.init(center: location, span: span)
-//                self.mymap.setRegion(region, animated: true)
-//
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//                    let annotation = MKPointAnnotation()
-//                    annotation.coordinate = location
-//                    annotation.title = "譯智"
-//                    annotation.subtitle = "教育訓練中心"
-//                    self.mymap.addAnnotation(annotation)
-//                }
-//            }
-//
-//        }
         
     }
     
@@ -58,6 +32,11 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let coordinate = locations[0].coordinate
         print(coordinate)
+        let xScale:CLLocationDegrees = 0.01
+        let yScale:CLLocationDegrees = 0.01
+        let span:MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: yScale, longitudeDelta: xScale)
+        let region:MKCoordinateRegion = MKCoordinateRegion.init(center: coordinate, span: span)
+        self.mymap.setRegion(region, animated: true)
     }
     
 
@@ -73,18 +52,5 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
             break
         }
     }
-    
-    @IBAction func longPressAction(_ sender: UILongPressGestureRecognizer) {
-        print("long Press!!!")
-        let touchPoint = sender.location(in: mymap)
-        let location = mymap.convert(touchPoint, toCoordinateFrom: mymap)
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = location
-        annotation.title = "自訂的"
-        annotation.subtitle = "詳細資訊"
-        self.mymap.addAnnotation(annotation)
-    }
-    
-    
 }
 
