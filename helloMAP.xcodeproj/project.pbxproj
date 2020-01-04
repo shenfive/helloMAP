@@ -14,6 +14,7 @@
 		BA479B9123B74A2B00042FDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA479B9023B74A2B00042FDD /* Assets.xcassets */; };
 		BA479B9423B74A2B00042FDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA479B9223B74A2B00042FDD /* LaunchScreen.storyboard */; };
 		BA48E5B423C025BC0067F971 /* 補充教材1228.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BA48E5B323C025BC0067F971 /* 補充教材1228.pdf */; };
+		BAF79B3F23C03EB600D403D3 /* ch05.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BAF79B3E23C03EB600D403D3 /* ch05.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BA479B9323B74A2B00042FDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA479B9523B74A2B00042FDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA48E5B323C025BC0067F971 /* 補充教材1228.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "補充教材1228.pdf"; sourceTree = "<group>"; };
+		BAF79B3E23C03EB600D403D3 /* ch05.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ch05.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				BA479B8723B74A2800042FDD /* AppDelegate.swift */,
 				BA479B8923B74A2800042FDD /* SceneDelegate.swift */,
 				BA479B8B23B74A2800042FDD /* ViewController.swift */,
+				BAF79B3E23C03EB600D403D3 /* ch05.pdf */,
 				BA479B8D23B74A2800042FDD /* Main.storyboard */,
 				BA479B9023B74A2B00042FDD /* Assets.xcassets */,
 				BA48E5B323C025BC0067F971 /* 補充教材1228.pdf */,
@@ -132,6 +135,7 @@
 				BA479B9123B74A2B00042FDD /* Assets.xcassets in Resources */,
 				BA479B8F23B74A2800042FDD /* Main.storyboard in Resources */,
 				BA48E5B423C025BC0067F971 /* 補充教材1228.pdf in Resources */,
+				BAF79B3F23C03EB600D403D3 /* ch05.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
